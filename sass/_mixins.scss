@@ -1,0 +1,11 @@
+@mixin flex-space-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@mixin component-width($width) {
+  max-width: $width;
+  width: 100%;
+  margin: 0 auto;
+}
