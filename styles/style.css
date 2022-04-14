@@ -20,11 +20,22 @@ a {
   text-decoration: none;
 }
 
+a,
+button {
+  cursor: pointer;
+}
+
 .header {
   position: relative;
   height: 25rem;
   background: url(../images/image-hero-desktop.jpg) no-repeat;
   background-size: cover;
+}
+@media (max-width: 800px) {
+  .header {
+    background: url(../images/image-hero-mobile.jpg) no-repeat;
+    background-size: 100%;
+  }
 }
 .header::before {
   content: "";
@@ -42,17 +53,67 @@ a {
   max-width: 1120px;
   width: 100%;
   margin: 0 auto;
-  padding: 3rem 1rem;
+  padding: 3rem 2rem;
   z-index: 20;
+}
+.header__navbar .btn__menu {
+  display: none;
+  width: 1.25rem;
+  height: 1.25rem;
+  border: none;
+  background: url(../images/icon-hamburger.svg) no-repeat;
+  background-size: contain;
+}
+@media (max-width: 800px) {
+  .header__navbar .btn__menu {
+    display: block;
+  }
+}
+.header__navbar .btn__menu.close {
+  background: url(../images/icon-close-menu.svg) no-repeat;
+  background-size: contain;
 }
 .header__navbar__menu {
   display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 2rem;
+  font-weight: 500;
 }
 .header__navbar__menu .link {
   color: white;
+}
+@media (max-width: 800px) {
+  .header__navbar__menu {
+    position: absolute;
+    background-color: white;
+    right: 2rem;
+    left: 2rem;
+    top: 6rem;
+    border-radius: 10px;
+    flex-direction: column;
+    align-items: flex-start;
+    transform: translateY(-500px);
+    opacity: 0;
+    transition: all 0.6s ease-out;
+    gap: 0;
+  }
+  .header__navbar__menu.show {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  .header__navbar__menu li {
+    width: 100%;
+  }
+  .header__navbar__menu li .link {
+    color: black;
+    display: inline-block;
+    padding: 1rem;
+    width: 100%;
+  }
+  .header__navbar__menu li + li {
+    border-top: 1px solid #e0e0e0;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
