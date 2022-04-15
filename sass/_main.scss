@@ -1,0 +1,57 @@
+@use 'variables';
+@use 'mixins';
+
+$component: '.main';
+
+#{$component} {
+  @include mixins.component-width(variables.$width-content-d);
+
+  &__banner {
+    @include mixins.card-component;
+    transform: translateY(-6.25rem);
+    position: relative;
+    text-align: center;
+
+    &::before {
+      content: url(../images/logo-mastercraft.svg);
+      position: absolute;
+      left: 50%;
+      top: 0;
+      transform: translate(-50%, -50%);
+    }
+
+    &__description {
+      margin-top: 1rem;
+      color: variables.$gray-400;
+    }
+
+    &__options {
+      margin-top: 2.5rem;
+      @include mixins.flex-space-between;
+
+      .btn {
+        height: 3.5rem;
+        border-radius: 1.75rem;
+        border: none;
+        font-weight: 700;
+        @include mixins.flex-center;
+      }
+
+      .btn__project {
+        background-color: variables.$cyan-400;
+        color: white;
+        width: 12.5rem;
+      }
+
+      .btn__bookmark {
+        width: 174px;
+        justify-content: flex-start;
+        color: variables.$gray-400;
+
+        img {
+          margin-right: 1rem;
+        }
+      }
+    }
+  }
+}

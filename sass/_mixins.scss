@@ -1,6 +1,14 @@
+@use 'variables';
+
 @mixin flex-space-between {
   display: flex;
   justify-content: space-between;
+  align-items: center;
+}
+
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
   align-items: center;
 }
 
@@ -10,8 +18,16 @@
   margin: 0 auto;
 }
 
+@mixin card-component {
+  background-color: white;
+  border-radius: 0.625rem;
+  padding: 2.875rem;
+  margin-bottom: 1rem;
+  border: 1px solid variables.$gray-100;
+}
+
 @mixin mobile {
-  @media (max-width: 800px) {
+  @media (max-width: 50rem) {
     @content;
   }
 }
