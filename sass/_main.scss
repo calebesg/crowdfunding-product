@@ -8,12 +8,12 @@ $component: '.main';
 
   &__banner {
     @include mixins.card-component;
-    transform: translateY(-5.75rem);
+    margin-top: -5.75rem;
     position: relative;
     text-align: center;
 
     @include mixins.mobile {
-      transform: translateY(-3.5rem);
+      margin-top: -3.5rem;
     }
 
     &::before {
@@ -80,6 +80,67 @@ $component: '.main';
           }
         }
       }
+    }
+  }
+
+  &__backed {
+    @include mixins.card-component;
+
+    &__result {
+      @include mixins.flex-space-between;
+
+      @include mixins.mobile {
+        flex-direction: column;
+      }
+
+      .display {
+        flex: 1 1 auto;
+        position: relative;
+
+        @include mixins.mobile {
+          padding-bottom: 1.5rem;
+          width: 100%;
+          @include mixins.flex-center;
+          flex-direction: column;
+        }
+
+        p {
+          font-size: 2rem;
+          font-weight: 700;
+        }
+
+        small {
+          display: inline-block;
+          color: variables.$gray-400;
+          margin-top: 0.625rem;
+        }
+      }
+
+      .display + .display {
+        position: relative;
+        border-left: 1px solid variables.$gray-200;
+        padding-left: 3rem;
+
+        @include mixins.mobile {
+          padding-top: 2rem;
+          padding-left: 0;
+          border: 0;
+
+          &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            width: 5.125rem;
+            height: 1px;
+            background-color: variables.$gray-200;
+          }
+        }
+      }
+    }
+
+    #range-backed {
+      margin-top: 2.375rem;
+      width: 100%;
     }
   }
 }
