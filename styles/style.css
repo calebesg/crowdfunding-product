@@ -17,7 +17,8 @@ button {
   font-family: "Commissioner", sans-serif;
 }
 
-ul {
+ul,
+ol {
   list-style: none;
 }
 
@@ -314,6 +315,115 @@ button {
 .main__backed #range-backed {
   margin-top: 2.375rem;
   width: 100%;
+}
+.main__about {
+  background-color: white;
+  border-radius: 0.625rem;
+  padding: 2.875rem;
+  margin-bottom: 1.625rem;
+  border: 1px solid #ebebeb;
+}
+@media (max-width: 50rem) {
+  .main__about {
+    padding: 2.5rem 1.375rem;
+  }
+}
+@media (max-width: 50rem) {
+  .main__about {
+    font-size: 12px;
+  }
+}
+.main__about h2 {
+  font-size: 1.25rem;
+}
+@media (max-width: 50rem) {
+  .main__about h2 {
+    font-size: 1.125rem;
+  }
+}
+.main__about p {
+  margin-top: 2rem;
+  color: #7a7a7a;
+  line-height: 2rem;
+}
+@media (max-width: 50rem) {
+  .main__about p {
+    line-height: 1.5rem;
+  }
+}
+.main__about__rewards {
+  margin-top: 2rem;
+}
+.main__about__rewards .card__reward {
+  border-radius: 0.625rem;
+  padding: 1.875rem;
+  margin-bottom: 1.625rem;
+  border: 1px solid #e0e0e0;
+}
+@media (max-width: 50rem) {
+  .main__about__rewards .card__reward {
+    padding: 1.5rem;
+  }
+}
+.main__about__rewards .card__reward P {
+  margin: 0;
+}
+.main__about__rewards .card__reward .card__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+@media (max-width: 50rem) {
+  .main__about__rewards .card__reward .card__header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+.main__about__rewards .card__reward .card__header p {
+  color: #3cb4ac;
+  font-weight: 700;
+}
+@media (max-width: 50rem) {
+  .main__about__rewards .card__reward .card__header p {
+    margin-top: 0.5rem;
+  }
+}
+.main__about__rewards .card__reward .card__footer {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+@media (max-width: 50rem) {
+  .main__about__rewards .card__reward .card__footer {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+.main__about__rewards .card__reward .card__footer .time {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.main__about__rewards .card__reward .card__footer .time strong {
+  color: black;
+  margin-right: 0.5rem;
+  font-size: 1.75rem;
+}
+.main__about__rewards .card__reward .card__footer .select__reward {
+  height: 3rem;
+  border: none;
+  width: 10rem;
+  border-radius: 1.5rem;
+  background-color: #3cb4ac;
+  color: white;
+  font-weight: 500;
+}
+@media (max-width: 50rem) {
+  .main__about__rewards .card__reward .card__footer .select__reward {
+    margin-top: 2rem;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
