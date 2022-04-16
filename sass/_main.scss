@@ -8,9 +8,13 @@ $component: '.main';
 
   &__banner {
     @include mixins.card-component;
-    transform: translateY(-6.25rem);
+    transform: translateY(-5.75rem);
     position: relative;
     text-align: center;
+
+    @include mixins.mobile {
+      transform: translateY(-3.5rem);
+    }
 
     &::before {
       content: url(../images/logo-mastercraft.svg);
@@ -20,14 +24,26 @@ $component: '.main';
       transform: translate(-50%, -50%);
     }
 
+    &__title {
+      @include mixins.mobile {
+        font-size: 1.125rem;
+        padding: 0 0.625rem;
+      }
+    }
+
     &__description {
       margin-top: 1rem;
       color: variables.$gray-400;
+
+      @include mixins.mobile {
+        font-size: 0.75rem;
+      }
     }
 
     &__options {
       margin-top: 2.5rem;
       @include mixins.flex-space-between;
+      gap: 1rem;
 
       .btn {
         height: 3.5rem;
@@ -44,12 +60,24 @@ $component: '.main';
       }
 
       .btn__bookmark {
-        width: 174px;
+        width: 10.875rem;
         justify-content: flex-start;
         color: variables.$gray-400;
 
-        img {
-          margin-right: 1rem;
+        .btn__bookmark--label {
+          margin: 0 1rem;
+        }
+
+        @include mixins.mobile {
+          width: fit-content;
+
+          .btn__bookmark--label {
+            margin: 0;
+            width: 0;
+            height: 0;
+            opacity: 0;
+            overflow: hidden;
+          }
         }
       }
     }

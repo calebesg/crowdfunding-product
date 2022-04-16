@@ -16,6 +16,10 @@
   max-width: $width;
   width: 100%;
   margin: 0 auto;
+
+  @include mobile {
+    width: 80%;
+  }
 }
 
 @mixin card-component {
@@ -24,6 +28,10 @@
   padding: 2.875rem;
   margin-bottom: 1rem;
   border: 1px solid variables.$gray-100;
+
+  @include mobile {
+    padding: 2.5rem 1.375rem;
+  }
 }
 
 @mixin mobile {

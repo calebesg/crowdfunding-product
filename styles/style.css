@@ -50,8 +50,9 @@ button {
 }
 @media (max-width: 50rem) {
   .header {
+    height: 300px;
     background: url(../images/image-hero-mobile.jpg) no-repeat;
-    background-size: 100%;
+    background-size: cover;
   }
 }
 .header::before {
@@ -72,6 +73,16 @@ button {
   margin: 0 auto;
   padding: 3rem 2rem;
   z-index: 20;
+}
+@media (max-width: 50rem) {
+  .header__navbar {
+    width: 80%;
+  }
+}
+@media (max-width: 50rem) {
+  .header__navbar {
+    padding: 3rem 0;
+  }
 }
 .header__navbar .btn__menu {
   display: none;
@@ -104,15 +115,15 @@ button {
   .header__navbar__menu {
     position: absolute;
     background-color: white;
-    right: 2rem;
-    left: 2rem;
+    right: 0;
+    left: 0;
     top: 6rem;
     border-radius: 10px;
     flex-direction: column;
     align-items: flex-start;
     transform: translateY(-500px);
     opacity: 0;
-    transition: all 0.6s ease-out;
+    transition: all 0.4s ease-out;
     gap: 0;
   }
   .header__navbar__menu.show {
@@ -139,7 +150,7 @@ button {
   color: white;
   background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0));
   backdrop-filter: blur(4px);
-  transition: opacity 1s;
+  transition: all 0.8s;
 }
 
 .main {
@@ -147,15 +158,30 @@ button {
   width: 100%;
   margin: 0 auto;
 }
+@media (max-width: 50rem) {
+  .main {
+    width: 80%;
+  }
+}
 .main__banner {
   background-color: white;
   border-radius: 0.625rem;
   padding: 2.875rem;
   margin-bottom: 1rem;
   border: 1px solid #ebebeb;
-  transform: translateY(-6.25rem);
+  transform: translateY(-5.75rem);
   position: relative;
   text-align: center;
+}
+@media (max-width: 50rem) {
+  .main__banner {
+    padding: 2.5rem 1.375rem;
+  }
+}
+@media (max-width: 50rem) {
+  .main__banner {
+    transform: translateY(-3.5rem);
+  }
 }
 .main__banner::before {
   content: url(../images/logo-mastercraft.svg);
@@ -164,15 +190,27 @@ button {
   top: 0;
   transform: translate(-50%, -50%);
 }
+@media (max-width: 50rem) {
+  .main__banner__title {
+    font-size: 1.125rem;
+    padding: 0 0.625rem;
+  }
+}
 .main__banner__description {
   margin-top: 1rem;
   color: #7a7a7a;
+}
+@media (max-width: 50rem) {
+  .main__banner__description {
+    font-size: 0.75rem;
+  }
 }
 .main__banner__options {
   margin-top: 2.5rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 1rem;
 }
 .main__banner__options .btn {
   height: 3.5rem;
@@ -189,12 +227,24 @@ button {
   width: 12.5rem;
 }
 .main__banner__options .btn__bookmark {
-  width: 174px;
+  width: 10.875rem;
   justify-content: flex-start;
   color: #7a7a7a;
 }
-.main__banner__options .btn__bookmark img {
-  margin-right: 1rem;
+.main__banner__options .btn__bookmark .btn__bookmark--label {
+  margin: 0 1rem;
+}
+@media (max-width: 50rem) {
+  .main__banner__options .btn__bookmark {
+    width: fit-content;
+  }
+  .main__banner__options .btn__bookmark .btn__bookmark--label {
+    margin: 0;
+    width: 0;
+    height: 0;
+    opacity: 0;
+    overflow: hidden;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
