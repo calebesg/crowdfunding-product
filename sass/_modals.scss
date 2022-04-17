@@ -2,6 +2,7 @@
 @use 'mixins';
 
 $success: '.modal__success';
+$rewards: '.modal__rewards';
 
 #{$success} {
   @include mixins.card-component;
@@ -12,9 +13,9 @@ $success: '.modal__success';
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  z-index: 20;
   box-shadow: 0 0.625rem 1.875rem rgba(0, 0, 0, 0.2);
   transition: all 0.4s;
+  z-index: 30;
 
   img {
     width: 5.625rem;
@@ -56,5 +57,18 @@ $success: '.modal__success';
     background-color: variables.$cyan-400;
     font-weight: 500;
     margin-top: 2rem;
+  }
+}
+
+#{$rewards} {
+  @include mixins.card-component;
+  @include mixins.component-width(variables.$width-content-d);
+  position: absolute;
+  top: 185px;
+  left: 50%;
+  transform: translate(-50%);
+  z-index: 30;
+
+  @include mixins.mobile {
   }
 }

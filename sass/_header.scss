@@ -99,13 +99,13 @@ $component: '.header';
     }
   }
 
-  .overlay {
+  .menu__overlay {
     position: fixed;
-    z-index: 10;
     inset: 0;
     color: white;
     background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0));
     backdrop-filter: blur(4px);
     transition: all 0.8s;
+    z-index: -1;
   }
 }

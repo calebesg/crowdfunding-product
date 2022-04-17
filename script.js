@@ -1,10 +1,11 @@
 'use strict';
 
-const overlay = document.querySelector('.overlay');
+const modalOverlay = document.querySelector('.modal__overlay');
 
 // MENU MOBILE
 ////////////////////////////////////////////////
 const mobileMenu = function () {
+  const overlay = document.querySelector('.menu__overlay');
   const nav = document.querySelector('.header__navbar__menu');
   const btnMenu = document.querySelector('.btn__menu');
 
@@ -26,16 +27,38 @@ const modalSuccess = function () {
 
   const closeModal = function () {
     modal.classList.add('hidden');
-    overlay.classList.add('hidden');
+    modalOverlay.classList.add('hidden');
   };
 
-  overlay.addEventListener('click', closeModal);
+  modalOverlay.addEventListener('click', closeModal);
   btnGoIt.addEventListener('click', closeModal);
+};
+
+// MODAL BACK THIS PROJECT
+//////////////////////////////////////////////////
+const modalBack = function () {
+  const overlay = document.querySelector('.modal__overlay');
+  const modal = document.querySelector('.modal__rewards');
+  const btnProject = document.querySelector('.btn__project');
+
+  const openModal = function () {
+    modalOverlay.classList.remove('hidden');
+    modal.classList.remove('hidden');
+  };
+
+  const closeModal = function () {
+    modal.classList.add('hidden');
+    modalOverlay.classList.add('hidden');
+  };
+
+  btnProject.addEventListener('click', openModal);
+  overlay.addEventListener('click', closeModal);
 };
 
 const init = function () {
   mobileMenu();
   modalSuccess();
+  modalBack();
 };
 
 init();
