@@ -152,16 +152,33 @@
     <!-- Modal Back this Project -->
     <!-- =============================================== -->
     <div class="modal__rewards hidden">
-      <h2>Back this project</h2>
-      <p>
+      <h2 class="modal__rewards__title">Back this project</h2>
+      <p class="modal__rewards__message">
         Want to support us in bringing Mastercraft Bamboo Monitor Riser out in
         the world?
       </p>
 
-      <ol class="main__about__rewards">
+      <ol class="modal__rewards__rewards">
         <li class="card__reward">
           <div class="card__header">
-            <h3 class="title">Bamboo Stand</h3>
+            <label for="opt1">
+              <input type="radio" name="option" id="opt1" />
+              Pledge with no reward
+            </label>
+          </div>
+          <p class="card__description">
+            Choose to support us without a reward if you simply believe in our
+            project. As a backer, you will be signed up to receive product
+            updates via email.
+          </p>
+        </li>
+
+        <li class="card__reward card__reward--active">
+          <div class="card__header">
+            <label for="opt2">
+              <input type="radio" name="option" id="opt2" />
+              Bamboo Stand
+            </label>
             <p class="price">Pledge $25 or more</p>
           </div>
           <p class="card__description">
@@ -169,14 +186,15 @@
             launch our promotional campaign, and you’ll be added to a special
             Backer member list.
           </p>
-          <div class="card__footer">
-            <p class="time"><strong>101</strong> left</p>
-            <button class="select__reward">Select Reward</button>
-          </div>
+          <p class="left"><strong>101</strong> left</p>
         </li>
+
         <li class="card__reward">
           <div class="card__header">
-            <h3 class="title">Black Edition Stand</h3>
+            <label for="opt3">
+              <input type="radio" name="option" id="opt3" />
+              Black Edition Stand
+            </label>
             <p class="price">Pledge $75 or more</p>
           </div>
           <p class="card__description">
@@ -184,14 +202,15 @@
             you. You’ll be added to our Backer member list. Shipping is
             included.
           </p>
-          <div class="card__footer">
-            <p class="time"><strong>64</strong> left</p>
-            <button class="select__reward">Select Reward</button>
-          </div>
+          <p class="left"><strong>64</strong> left</p>
         </li>
-        <li class="card__reward">
+
+        <li class="card__reward disabled">
           <div class="card__header">
-            <h3 class="title">Mahogany Special Edition</h3>
+            <label for="opt4">
+              <input type="radio" name="option" id="opt4" />
+              Mahogany Special Edition
+            </label>
             <p class="price">Pledge $200 or more</p>
           </div>
           <p class="card__description">
@@ -199,10 +218,7 @@
             personal thank you. You’ll be added to our Backer member list.
             Shipping is included.
           </p>
-          <div class="card__footer">
-            <p class="time"><strong>0</strong> left</p>
-            <button class="select__reward">Out of Stock</button>
-          </div>
+          <p class="left"><strong>0</strong> left</p>
         </li>
       </ol>
     </div>

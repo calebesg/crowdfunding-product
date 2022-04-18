@@ -36,6 +36,10 @@ button {
   opacity: 0;
 }
 
+.disabled {
+  opacity: 0.5;
+}
+
 .sr-only {
   width: 1px;
   height: 1px;
@@ -519,7 +523,7 @@ button {
   width: 100%;
   margin: 0 auto;
   position: absolute;
-  top: 185px;
+  top: 11.5625rem;
   left: 50%;
   transform: translate(-50%);
   z-index: 30;
@@ -533,6 +537,115 @@ button {
   .modal__rewards {
     width: 80%;
   }
+}
+@media (max-width: 50rem) {
+  .modal__rewards__title {
+    font-size: 1.125rem;
+  }
+}
+.modal__rewards__message {
+  color: #7a7a7a;
+  margin-top: 1rem;
+  line-height: 2rem;
+}
+@media (max-width: 50rem) {
+  .modal__rewards__message {
+    font-size: 0.75rem;
+    line-height: 1.25rem;
+  }
+}
+.modal__rewards__rewards {
+  margin-top: 2rem;
+}
+@media (max-width: 50rem) {
+  .modal__rewards__rewards {
+    margin-top: 1.25rem;
+  }
+}
+.modal__rewards__rewards .card__reward {
+  border-radius: 0.625rem;
+  padding: 1.875rem;
+  margin-bottom: 1.625rem;
+  border: 1px solid #e0e0e0;
+  display: grid;
+  grid-template-areas: "a b" "c c";
+  grid-template-columns: auto 1fr;
+  grid-template-rows: auto 1fr;
+  gap: 1rem;
+}
+@media (max-width: 50rem) {
+  .modal__rewards__rewards .card__reward {
+    padding: 1.5rem;
+  }
+}
+@media (max-width: 50rem) {
+  .modal__rewards__rewards .card__reward {
+    display: flex;
+    flex-direction: column;
+  }
+}
+.modal__rewards__rewards .card__reward .card__header {
+  grid-area: a;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+@media (max-width: 50rem) {
+  .modal__rewards__rewards .card__reward .card__header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+    font-size: 0.875rem;
+  }
+}
+.modal__rewards__rewards .card__reward .card__header label {
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+}
+.modal__rewards__rewards .card__reward .card__header label input {
+  margin-right: 0.5rem;
+  width: 1rem;
+  height: 1rem;
+}
+.modal__rewards__rewards .card__reward .card__header .price {
+  color: #3cb4ac;
+}
+@media (max-width: 50rem) {
+  .modal__rewards__rewards .card__reward .card__header .price {
+    margin-left: 1.5rem;
+  }
+}
+.modal__rewards__rewards .card__reward .card__description {
+  grid-area: c;
+  color: #7a7a7a;
+  line-height: 2rem;
+  padding-left: 1.5rem;
+}
+@media (max-width: 50rem) {
+  .modal__rewards__rewards .card__reward .card__description {
+    font-size: 12px;
+    line-height: 1.25rem;
+    padding-left: 0;
+  }
+}
+.modal__rewards__rewards .card__reward .left {
+  grid-area: b;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 8px;
+}
+.modal__rewards__rewards .card__reward .left strong {
+  font-size: 20px;
+}
+@media (max-width: 50rem) {
+  .modal__rewards__rewards .card__reward .left {
+    justify-content: flex-start;
+  }
+}
+.modal__rewards__rewards .card__reward.card__reward--active {
+  border: 3px solid #3cb4ac;
 }
 
 /*# sourceMappingURL=style.css.map */

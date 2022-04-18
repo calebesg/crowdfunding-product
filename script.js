@@ -1,7 +1,5 @@
 'use strict';
 
-const modalOverlay = document.querySelector('.modal__overlay');
-
 // MENU MOBILE
 ////////////////////////////////////////////////
 const mobileMenu = function () {
@@ -22,6 +20,7 @@ const mobileMenu = function () {
 // MODAL SUCCESS
 ///////////////////////////////////////////////
 const modalSuccess = function () {
+  const modalOverlay = document.querySelector('.modal__overlay');
   const modal = document.querySelector('.modal__success');
   const btnGoIt = document.querySelector('.modal__success button');
 
@@ -37,7 +36,7 @@ const modalSuccess = function () {
 // MODAL BACK THIS PROJECT
 //////////////////////////////////////////////////
 const modalBack = function () {
-  const overlay = document.querySelector('.modal__overlay');
+  const modalOverlay = document.querySelector('.modal__overlay');
   const modal = document.querySelector('.modal__rewards');
   const btnProject = document.querySelector('.btn__project');
 
@@ -52,7 +51,7 @@ const modalBack = function () {
   };
 
   btnProject.addEventListener('click', openModal);
-  overlay.addEventListener('click', closeModal);
+  modalOverlay.addEventListener('click', closeModal);
 };
 
 const init = function () {

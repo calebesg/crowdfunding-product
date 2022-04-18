@@ -38,6 +38,10 @@ button {
   opacity: 0;
 }
 
+.disabled {
+  opacity: 0.5;
+}
+
 .sr-only {
   width: 1px;
   height: 1px;
