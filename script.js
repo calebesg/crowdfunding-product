@@ -1,63 +1,54 @@
 'use strict';
 
-// MENU MOBILE
-////////////////////////////////////////////////
-const mobileMenu = function () {
-  const overlay = document.querySelector('.menu__overlay');
-  const nav = document.querySelector('.header__navbar__menu');
-  const btnMenu = document.querySelector('.btn__menu');
+const allReward = document.querySelectorAll(
+  '.modal__rewards__rewards .card__reward'
+);
+const modalReward = document.querySelector('.modal__rewards__rewards');
+const menuOverlay = document.querySelector('.menu__overlay');
+const nav = document.querySelector('.header__navbar__menu');
+const btnMenu = document.querySelector('.btn__menu');
+const modalOverlay = document.querySelector('.modal__overlay');
+const modalRewards = document.querySelector('.modal__rewards');
+const btnProject = document.querySelector('.btn__project');
+const modalSuccess = document.querySelector('.modal__success');
+const btnGoIt = document.querySelector('.modal__success button');
 
-  const openOrCloseMenu = function () {
+class App {
+  constructor() {
+    btnMenu.addEventListener('click', this._toggleVisibilityMobileMenu);
+    menuOverlay.addEventListener('click', this._toggleVisibilityMobileMenu);
+
+    btnProject.addEventListener('click', this._toggleVisibilyRewards);
+    modalOverlay.addEventListener('click', this._toggleVisibilyRewards);
+    modalReward.addEventListener('click', this._setActiveReward);
+
+    btnGoIt.addEventListener('click', this._toggleVisibilitySuccess);
+  }
+
+  _toggleVisibilityMobileMenu() {
     nav.classList.toggle('show');
     btnMenu.classList.toggle('close');
-    overlay.classList.toggle('hidden');
-  };
+    menuOverlay.classList.toggle('hidden');
+  }
 
-  btnMenu.addEventListener('click', openOrCloseMenu);
-  overlay.addEventListener('click', openOrCloseMenu);
-};
+  _toggleVisibilyRewards() {
+    modalOverlay.classList.toggle('hidden');
+    modalRewards.classList.toggle('hidden');
+  }
 
-// MODAL SUCCESS
-///////////////////////////////////////////////
-const modalSuccess = function () {
-  const modalOverlay = document.querySelector('.modal__overlay');
-  const modal = document.querySelector('.modal__success');
-  const btnGoIt = document.querySelector('.modal__success button');
+  _setActiveReward(event) {
+    if (event.target.classList.contains('reward__option') === false) return;
 
-  const closeModal = function () {
-    modal.classList.add('hidden');
-    modalOverlay.classList.add('hidden');
-  };
+    const reward = event.target.closest('.card__reward');
 
-  modalOverlay.addEventListener('click', closeModal);
-  btnGoIt.addEventListener('click', closeModal);
-};
+    allReward.forEach(re => re.classList.remove('card__reward--active'));
+    reward.classList.add('card__reward--active');
+  }
 
-// MODAL BACK THIS PROJECT
-//////////////////////////////////////////////////
-const modalBack = function () {
-  const modalOverlay = document.querySelector('.modal__overlay');
-  const modal = document.querySelector('.modal__rewards');
-  const btnProject = document.querySelector('.btn__project');
+  _toggleVisibilitySuccess() {
+    modalSuccess.classList.toggle('hidden');
+    modalOverlay.classList.toggle('hidden');
+  }
+}
 
-  const openModal = function () {
-    modalOverlay.classList.remove('hidden');
-    modal.classList.remove('hidden');
-  };
-
-  const closeModal = function () {
-    modal.classList.add('hidden');
-    modalOverlay.classList.add('hidden');
-  };
-
-  btnProject.addEventListener('click', openModal);
-  modalOverlay.addEventListener('click', closeModal);
-};
-
-const init = function () {
-  mobileMenu();
-  modalSuccess();
-  modalBack();
-};
-
-init();
+const app = new App();
