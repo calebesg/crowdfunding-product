@@ -23,6 +23,11 @@ class App {
     modalReward.addEventListener('click', this._setActiveReward);
 
     btnGoIt.addEventListener('click', this._toggleVisibilitySuccess);
+
+    document.querySelectorAll('.reward__option').forEach(el => {
+      if (el.closest('.card__reward').classList.contains('disabled'))
+        el.disabled = true;
+    });
   }
 
   _toggleVisibilityMobileMenu() {
