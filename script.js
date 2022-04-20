@@ -12,6 +12,7 @@ const modalRewards = document.querySelector('.modal__rewards');
 const btnProject = document.querySelector('.btn__project');
 const modalSuccess = document.querySelector('.modal__success');
 const btnGoIt = document.querySelector('.modal__success button');
+const rewardForms = document.querySelectorAll('.reward_form');
 
 class App {
   constructor() {
@@ -21,6 +22,7 @@ class App {
     btnProject.addEventListener('click', this._toggleVisibilyRewards);
     modalOverlay.addEventListener('click', this._toggleVisibilyRewards);
     modalReward.addEventListener('click', this._setActiveReward);
+    modalReward.addEventListener('click', this._showModalSuccess.bind(this));
 
     btnGoIt.addEventListener('click', this._toggleVisibilitySuccess);
 
@@ -47,7 +49,16 @@ class App {
     const reward = event.target.closest('.card__reward');
 
     allReward.forEach(re => re.classList.remove('card__reward--active'));
+    rewardForms.forEach(re => re.classList.add('form--hidden'));
+
     reward.classList.add('card__reward--active');
+    reward.querySelector('.reward_form').classList.remove('form--hidden');
+  }
+
+  _showModalSuccess(event) {
+    if (event.target.classList.contains('btn_reward_confirm') === false) return;
+    this._toggleVisibilyRewards();
+    this._toggleVisibilitySuccess();
   }
 
   _toggleVisibilitySuccess() {
