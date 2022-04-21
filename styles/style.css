@@ -230,6 +230,10 @@ button {
   background-color: #3cb4ac;
   color: white;
   width: 12.5rem;
+  transition: background-color 0.3s;
+}
+.main__banner__options .btn__project:hover {
+  background-color: #147b74;
 }
 .main__banner__options .btn__bookmark {
   width: 10.875rem;
@@ -452,11 +456,25 @@ button {
   background-color: #3cb4ac;
   color: white;
   font-weight: 500;
+  transition: background-color 0.3s;
 }
 @media (max-width: 50rem) {
   .main__about__rewards .card__reward .card__footer .select__reward {
     margin-top: 2rem;
   }
+}
+.main__about__rewards .card__reward .card__footer .select__reward:hover {
+  background-color: #147b74;
+}
+.main__about__rewards .card__reward.disabled {
+  cursor: default;
+}
+.main__about__rewards .card__reward.disabled .select__reward {
+  cursor: default;
+  background-color: #7a7a7a;
+}
+.main__about__rewards .card__reward.disabled .select__reward:hover {
+  background-color: #7a7a7a;
 }
 
 .modal__success {
@@ -530,6 +548,10 @@ button {
   background-color: #3cb4ac;
   font-weight: 500;
   margin-top: 2rem;
+  transition: background-color 0.3s;
+}
+.modal__success button:hover {
+  background-color: #147b74;
 }
 
 .overlay_success {
@@ -716,6 +738,10 @@ button {
   background-color: #3cb4ac;
   color: white;
   font-weight: 500;
+  transition: background-color 0.3s;
+}
+.modal__rewards__rewards .card__reward .reward_form button:hover {
+  background-color: #147b74;
 }
 .modal__rewards__rewards .card__reward .reward_form button::before {
   content: "$";

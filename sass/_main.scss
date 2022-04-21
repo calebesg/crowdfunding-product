@@ -57,6 +57,11 @@ $component: '.main';
         background-color: variables.$cyan-400;
         color: white;
         width: 12.5rem;
+        transition: background-color 0.3s;
+
+        &:hover {
+          background-color: variables.$cyan-600;
+        }
       }
 
       .btn__bookmark {
@@ -258,10 +263,28 @@ $component: '.main';
             background-color: variables.$cyan-400;
             color: white;
             font-weight: 500;
+            transition: background-color 0.3s;
 
             @include mixins.mobile {
               margin-top: 2rem;
             }
+
+            &:hover {
+              background-color: variables.$cyan-600;
+            }
+          }
+        }
+      }
+
+      .card__reward.disabled {
+        cursor: default;
+
+        .select__reward {
+          cursor: default;
+          background-color: variables.$gray-400;
+
+          &:hover {
+            background-color: variables.$gray-400;
           }
         }
       }
