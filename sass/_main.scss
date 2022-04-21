@@ -69,6 +69,16 @@ $component: '.main';
         justify-content: flex-start;
         color: variables.$gray-400;
 
+        img {
+          transition: opacity 0.3s;
+        }
+
+        &:hover {
+          img {
+            opacity: 0.8;
+          }
+        }
+
         .btn__bookmark--label {
           margin: 0 1rem;
         }
