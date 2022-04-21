@@ -259,16 +259,6 @@ $rewards: '.modal__rewards';
           &:hover {
             background-color: variables.$cyan-600;
           }
-
-          &::before {
-            content: '$';
-            position: absolute;
-            left: -5.5rem;
-            top: 50%;
-            transform: translateY(-55%);
-            font-size: 0.875rem;
-            color: variables.$gray-200;
-          }
         }
       }
 

@@ -787,15 +787,6 @@ button {
 .modal__rewards__rewards .card__reward .reward_form button:hover {
   background-color: #147b74;
 }
-.modal__rewards__rewards .card__reward .reward_form button::before {
-  content: "$";
-  position: absolute;
-  left: -5.5rem;
-  top: 50%;
-  transform: translateY(-55%);
-  font-size: 0.875rem;
-  color: #e0e0e0;
-}
 .modal__rewards__rewards .card__reward .reward_form.form--hidden {
   margin-top: 0;
   max-height: 0;
