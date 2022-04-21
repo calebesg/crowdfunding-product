@@ -45,6 +45,16 @@
   }
 }
 
+@mixin overlay {
+  position: fixed;
+  inset: 0;
+  color: white;
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0));
+  backdrop-filter: blur(4px);
+  transition: all 0.8s;
+  z-index: -1;
+}
+
 @mixin mobile {
   @media (max-width: 50rem) {
     @content;

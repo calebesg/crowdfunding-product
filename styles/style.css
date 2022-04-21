@@ -148,7 +148,7 @@ button {
     border-top: 1px solid #ebebeb;
   }
 }
-.header .menu__overlay {
+.header .overlay_menu {
   position: fixed;
   inset: 0;
   color: white;
@@ -156,16 +156,6 @@ button {
   backdrop-filter: blur(4px);
   transition: all 0.8s;
   z-index: -1;
-}
-
-.modal__overlay {
-  position: fixed;
-  z-index: 20;
-  inset: 0;
-  color: white;
-  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0));
-  backdrop-filter: blur(4px);
-  transition: all 0.8s;
 }
 
 .main {
@@ -513,6 +503,17 @@ button {
   margin-top: 2rem;
 }
 
+.overlay_success {
+  position: fixed;
+  inset: 0;
+  color: white;
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0));
+  backdrop-filter: blur(4px);
+  transition: all 0.8s;
+  z-index: -1;
+  z-index: 20;
+}
+
 .modal__rewards {
   background-color: white;
   border-radius: 0.625rem;
@@ -706,6 +707,17 @@ button {
 }
 .modal__rewards__rewards .card__reward.card__reward--active {
   border: 3px solid #3cb4ac;
+}
+
+.overlay_rewards {
+  position: fixed;
+  inset: 0;
+  color: white;
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0));
+  backdrop-filter: blur(4px);
+  transition: all 0.8s;
+  z-index: -1;
+  z-index: 20;
 }
 
 /*# sourceMappingURL=style.css.map */

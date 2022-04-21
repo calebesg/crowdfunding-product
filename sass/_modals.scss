@@ -60,6 +60,11 @@ $rewards: '.modal__rewards';
   }
 }
 
+.overlay_success {
+  @include mixins.overlay;
+  z-index: 20;
+}
+
 #{$rewards} {
   @include mixins.card-component;
   @include mixins.component-width(variables.$width-content-d);
@@ -239,4 +244,9 @@ $rewards: '.modal__rewards';
       border: 3px solid variables.$cyan-400;
     }
   }
+}
+
+.overlay_rewards {
+  @include mixins.overlay;
+  z-index: 20;
 }

@@ -3,14 +3,17 @@
 const allReward = document.querySelectorAll(
   '.modal__rewards__rewards .card__reward'
 );
-const modalReward = document.querySelector('.modal__rewards__rewards');
-const menuOverlay = document.querySelector('.menu__overlay');
 const nav = document.querySelector('.header__navbar__menu');
+const menuOverlay = document.querySelector('.overlay_menu');
 const btnMenu = document.querySelector('.btn__menu');
-const modalOverlay = document.querySelector('.modal__overlay');
-const modalRewards = document.querySelector('.modal__rewards');
+
 const btnProject = document.querySelector('.btn__project');
+const modalReward = document.querySelector('.modal__rewards');
+const overlayRewards = document.querySelector('.overlay_rewards');
+const rewardsContainer = document.querySelector('.modal__rewards__rewards');
+
 const modalSuccess = document.querySelector('.modal__success');
+const overlaySuccess = document.querySelector('.overlay_success');
 const btnGoIt = document.querySelector('.modal__success button');
 const rewardForms = document.querySelectorAll('.reward_form');
 
@@ -20,9 +23,12 @@ class App {
     menuOverlay.addEventListener('click', this._toggleVisibilityMobileMenu);
 
     btnProject.addEventListener('click', this._toggleVisibilyRewards);
-    modalOverlay.addEventListener('click', this._toggleVisibilyRewards);
-    modalReward.addEventListener('click', this._setActiveReward);
-    modalReward.addEventListener('click', this._showModalSuccess.bind(this));
+    overlayRewards.addEventListener('click', this._toggleVisibilyRewards);
+    rewardsContainer.addEventListener('click', this._setActiveReward);
+    rewardsContainer.addEventListener(
+      'click',
+      this._showModalSuccess.bind(this)
+    );
 
     btnGoIt.addEventListener('click', this._toggleVisibilitySuccess);
 
@@ -39,8 +45,8 @@ class App {
   }
 
   _toggleVisibilyRewards() {
-    modalOverlay.classList.toggle('hidden');
-    modalRewards.classList.toggle('hidden');
+    overlayRewards.classList.toggle('hidden');
+    modalReward.classList.toggle('hidden');
   }
 
   _setActiveReward(event) {
@@ -63,7 +69,7 @@ class App {
 
   _toggleVisibilitySuccess() {
     modalSuccess.classList.toggle('hidden');
-    modalOverlay.classList.toggle('hidden');
+    overlaySuccess.classList.toggle('hidden');
   }
 }
 
