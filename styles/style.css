@@ -316,9 +316,38 @@ button {
     background-color: #e0e0e0;
   }
 }
-.main__backed #range-backed {
+.main__backed .ranger {
   margin-top: 2.375rem;
+  height: 10px;
+  border-radius: 5px;
+  position: relative;
+  overflow: hidden;
+}
+.main__backed .ranger .ranger_bar {
+  position: absolute;
+  height: 100%;
+  width: 80%;
+  border-radius: 5px;
+  bottom: 0;
+  background-color: #3cb4ac;
+  z-index: 20;
+}
+.main__backed .ranger #range-backed {
+  position: absolute;
   width: 100%;
+  height: 100%;
+  background-color: #e0e0e0;
+  -webkit-appearance: none;
+  appearance: none;
+  z-index: 10;
+}
+.main__backed .ranger #range-backed::-webkit-slider-thumb {
+  appearance: none;
+}
+.main__backed .ranger #range-backed::-moz-range-thumb {
+  width: 0;
+  height: 0;
+  opacity: 0;
 }
 .main__about {
   background-color: white;
