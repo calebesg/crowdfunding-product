@@ -184,9 +184,20 @@ $rewards: '.modal__rewards';
         grid-area: d;
         @include mixins.flex-space-between;
         gap: 1rem;
+        width: 100%;
         margin-top: 2rem;
         max-height: 20rem;
         transition: all 0.3s;
+
+        @include mixins.mobile {
+          margin-top: 1rem;
+          display: grid;
+          gap: 0;
+          grid-template-areas: 'a a' 'b c';
+          grid-template-columns: 1fr 1fr;
+          grid-template-rows: 1fr 1fr;
+          justify-items: center;
+        }
 
         &::before {
           content: '';
@@ -196,11 +207,21 @@ $rewards: '.modal__rewards';
           right: 0;
           bottom: 6.5rem;
           background-color: variables.$gray-200;
+
+          @include mixins.mobile {
+            bottom: 8rem;
+          }
         }
 
         label {
           flex: 1 1 auto;
           color: variables.$gray-400;
+
+          @include mixins.mobile {
+            grid-area: a;
+            margin-bottom: 1rem;
+            width: fit-content;
+          }
         }
 
         input {
@@ -210,6 +231,13 @@ $rewards: '.modal__rewards';
           width: 6.25rem;
           border-radius: 1.5rem;
           border: 1px solid variables.$gray-100;
+
+          @include mixins.mobile {
+            padding-left: 2rem;
+            grid-area: b;
+            width: 6rem;
+            height: 2.75rem;
+          }
         }
 
         button {
@@ -222,6 +250,11 @@ $rewards: '.modal__rewards';
           color: white;
           font-weight: 500;
           transition: background-color 0.3s;
+
+          @include mixins.mobile {
+            width: 6rem;
+            height: 2.75rem;
+          }
 
           &:hover {
             background-color: variables.$cyan-600;
